@@ -1,0 +1,69 @@
+{
+  "name": "skill-analyzer",
+  "version": "1.0.0",
+  "description": "A comprehensive skill analysis platform that helps users assess their current skills, identify gaps, and receive personalized learning recommendations",
+  "main": "frontend/index.html",
+  "scripts": {
+    "start": "npx serve frontend -p 8000",
+    "dev": "npx serve frontend -p 8000 -l",
+    "build": "echo 'Build process not implemented yet'",
+    "test": "echo 'Tests not implemented yet'",
+    "lint": "echo 'Linting not implemented yet'",
+    "format": "echo 'Code formatting not implemented yet'"
+  },
+  "keywords": [
+    "skills",
+    "learning",
+    "assessment",
+    "career",
+    "education",
+    "progress",
+    "analytics",
+    "recommendations",
+    "javascript",
+    "html5",
+    "css3",
+    "bootstrap",
+    "chartjs"
+  ],
+  "author": {
+    "name": "Skill Analyzer Team",
+    "email": "md@1134",
+    "url": "https://skill-analyzer.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/skill-analyzer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/skill-analyzer/issues"
+  },
+  "homepage": "https://github.com/your-username/skill-analyzer#readme",
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "files": [
+    "frontend/**/*",
+    "backend/**/*",
+    "docs/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "config": {
+    "port": 8000,
+    "host": "localhost"
+  }
+}

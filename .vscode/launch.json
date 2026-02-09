@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Skill Analyzer",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/.bin/serve",
+            "args": [
+                "frontend",
+                "-p",
+                "8000",
+                "-l"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "presentation": {
+                "hidden": false,
+                "group": "Skill Analyzer",
+                "order": 1
+            }
+        },
+        {
+            "name": "Launch with Live Server",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/.bin/live-server",
+            "args": [
+                "frontend",
+                "--port=8080",
+                "--open=/index.html"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "presentation": {
+                "hidden": false,
+                "group": "Skill Analyzer",
+                "order": 2
+            }
+        }
+    ]
+}

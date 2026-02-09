@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skill Analyzer - Comprehensive skill assessment and learning recommendations">
+    <title>Skill Analyzer - Assessment</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-chart-line me-2"></i>
+                <strong>Skill Analyzer</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="analyzer.html">Analyzer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="progress.html">Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="request.html">Request</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="text-center mb-5">
+                        <h1 class="display-4 fw-bold">Skill Assessment</h1>
+                        <p class="lead text-muted">Evaluate your current skills and get personalized learning recommendations</p>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="resetAssessment()">
+                            <i class="fas fa-redo me-2"></i>Start Fresh Assessment
+                        </button>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" id="assessmentProgress" style="width: 25%"></div>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <small class="text-muted">Step 1: Categories</small>
+                                <small class="text-muted">Step 2: Skills</small>
+                                <small class="text-muted">Step 3: Results</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Category Selection -->
+                    <div class="assessment-step active" id="step1">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-4">Select Skill Categories</h3>
+                                <p class="text-muted mb-4">Choose the categories you want to assess your skills in</p>
+                                
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="category-card card h-100 border-0 shadow-sm" data-category="technical">
+                                            <div class="card-body text-center">
+                                                <div class="category-icon mb-3">
+                                                    <i class="fas fa-code fa-3x text-primary"></i>
+                                                </div>
+                                                <h5>Technical Skills</h5>
+                                                <p class="text-muted">Programming, databases, cloud computing</p>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="technicalCheck">
+                                                    <label class="form-check-label" for="technicalCheck">
+                                                        Select Category
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="category-card card h-100 border-0 shadow-sm" data-category="design">
+                                            <div class="card-body text-center">
+                                                <div class="category-icon mb-3">
+                                                    <i class="fas fa-palette fa-3x text-success"></i>
+                                                </div>
+                                                <h5>Design Skills</h5>
+                                                <p class="text-muted">UI/UX, graphic design, prototyping</p>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="designCheck">
+                                                    <label class="form-check-label" for="designCheck">
+                                                        Select Category
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="category-card card h-100 border-0 shadow-sm" data-category="business">
+                                            <div class="card-body text-center">
+                                                <div class="category-icon mb-3">
+                                                    <i class="fas fa-briefcase fa-3x text-warning"></i>
+                                                </div>
+                                                <h5>Business Skills</h5>
+                                                <p class="text-muted">Project management, marketing, finance</p>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="businessCheck">
+                                                    <label class="form-check-label" for="businessCheck">
+                                                        Select Category
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="category-card card h-100 border-0 shadow-sm" data-category="soft">
+                                            <div class="card-body text-center">
+                                                <div class="category-icon mb-3">
+                                                    <i class="fas fa-users fa-3x text-info"></i>
+                                                </div>
+                                                <h5>Soft Skills</h5>
+                                                <p class="text-muted">Communication, leadership, teamwork</p>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="softCheck">
+                                                    <label class="form-check-label" for="softCheck">
+                                                        Select Category
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-primary btn-lg px-5" id="continueToSkills" disabled>
+                                        Continue to Skills
+                                        <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Skill Assessment -->
+                    <div class="assessment-step" id="step2">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-4">Rate Your Skills</h3>
+                                <p class="text-muted mb-4">Rate your proficiency in each selected skill (Beginner, Intermediate, Expert)</p>
+                                
+                                <div id="skillsContainer">
+                                    <!-- Skills will be dynamically loaded here -->
+                                </div>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button class="btn btn-secondary" id="backToCategories">
+                                        <i class="fas fa-arrow-left me-2"></i>Back to Categories
+                                    </button>
+                                    <button class="btn btn-primary btn-lg px-5" id="continueToResults" onclick="goToStep3(); return false;">
+                                        View Results
+                                        <i class="fas fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Results -->
+                    <div class="assessment-step" id="step3">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-4">Your Assessment Results</h3>
+                                <p class="text-muted mb-4">Based on your self-assessment, here are your skill levels and learning recommendations</p>
+                                
+                                <div id="resultsContainer">
+                                    <!-- Results will be dynamically loaded here -->
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-success btn-lg px-5" onclick="window.location.href='progress.html'">
+                                        View Progress
+                                        <i class="fas fa-chart-line ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Learning Modal -->
+    <div class="modal fade" id="learningModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="learningModalTitle">Learning Module</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="learningContent">
+                        <!-- Learning content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal fade" id="quizModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Skill Quiz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="quizContent">
+                        <!-- Quiz content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Skill Analyzer. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="index.html" class="text-white text-decoration-none me-3">Home</a>
+                    <a href="about.html" class="text-white text-decoration-none me-3">About Us</a>
+                    <a href="contact.html" class="text-white text-decoration-none me-3">Contact</a>
+                    <a href="request.html" class="text-white text-decoration-none">Request Feature</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Skills Data -->
+    <script src="js/skills-data.js"></script>
+    <!-- Main Application -->
+    <script src="js/app.js"></script>
+    <!-- Analyzer JavaScript -->
+    <script src="js/analyzer.js"></script>
+</body>
+</html>

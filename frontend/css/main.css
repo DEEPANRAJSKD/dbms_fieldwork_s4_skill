@@ -1,0 +1,704 @@
+/* Skill Analyzer - Clean Modern CSS */
+
+/* CSS Variables for Consistency */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 76px;
+    min-height: calc(100vh - 76px);
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--hero-gradient);
+    color: white;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-buttons .btn {
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    min-width: 200px;
+    min-height: 70px;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--light-color);
+}
+
+/* Navigation */
+.navbar {
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.7rem; /* Slightly bigger from 1.6rem */
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.card:hover {
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-2px);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 10px;
+    min-width: 140px;
+    min-height: 56px;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+    font-weight: 600;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    min-width: 120px;
+    min-height: 48px;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+/* Modals */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Progress Bars */
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* Alerts */
+.alert {
+    border: none;
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-color);
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom Utility Classes */
+.text-gradient {
+    background: var(--hero-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-custom {
+    box-shadow: var(--card-shadow);
+}
+
+.shadow-hover:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+/* Assessment Steps */
+.assessment-step {
+    display: none;
+}
+
+.assessment-step.active {
+    display: block;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Category Cards */
+.category-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.category-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.category-card.selected {
+    border-color: var(--primary-color);
+    background: rgba(13, 110, 253, 0.05);
+}
+
+/* Skill Rating */
+.skill-rating .btn-group {
+    width: 100%;
+}
+
+.skill-rating .btn-check {
+    display: none;
+}
+
+.skill-rating .btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.skill-rating .btn-check:checked + .btn-outline-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Results Section */
+.results-summary {
+    text-align: center;
+}
+
+.skill-result-card {
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.skill-result-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Learning Module */
+.learning-module {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.lesson-card {
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.lesson-card:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+/* Quiz System */
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-options .form-check {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-options .form-check:hover {
+    border-color: var(--primary-color);
+    background: rgba(13, 110, 253, 0.05);
+}
+
+.quiz-options .form-check-input:checked + .form-check-label {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Progress Tracking */
+.stat-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--light-color);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* Achievements */
+.achievement-card {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #e9ecef;
+}
+
+.achievement-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow);
+}
+
+.achievement-card.unlocked {
+    border-color: var(--warning-color);
+    background: rgba(255, 193, 7, 0.1);
+}
+
+.achievement-icon {
+    margin-bottom: 15px;
+}
+
+/* Request System */
+.request-item {
+    border-left: 4px solid var(--primary-color);
+    background: var(--light-color);
+    transition: all 0.3s ease;
+}
+
+.request-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--card-shadow);
+}
+
+/* Loading States */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Bulk Selection Buttons */
+.quick-selection-card {
+    border: 2px dashed #007bff;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.quick-selection-card .btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.quick-selection-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,123,255,0.2);
+}
+
+/* Skill Rating Buttons */
+.skill-rating .btn {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.skill-rating .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.skill-rating .btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.skill-rating .btn-outline-warning {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+.skill-rating .btn-check:checked + .btn-outline-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.skill-rating .btn-check:checked + .btn-outline-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.skill-rating .btn-check:checked + .btn-outline-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: white;
+}
+
+/* Progress Page Fixes */
+.main-content {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.progress-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.stat-card {
+    /* Removed max-height constraint */
+    overflow: visible;
+}
+
+.skill-progress-card {
+    /* Removed max-height constraint */
+    overflow: visible;
+}
+
+.achievement-card {
+    max-height: 140px;
+    overflow: hidden;
+}
+
+/* Progress Page Skill Cards */
+.skill-progress-card {
+    transition: all 0.3s ease;
+    border-left: 4px solid #dee2e6 !important;
+    min-height: 140px; /* Increased height */
+    padding: 1rem !important; /* More padding */
+}
+
+.skill-progress-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.skill-progress-card:not(.bg-light) {
+    border-left-color: #007bff !important;
+}
+
+.skill-progress-card.bg-light {
+    border-left-color: #6c757d !important;
+}
+
+.skill-progress-card .progress {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.skill-progress-card .progress-bar {
+    border-radius: 4px;
+}
+
+.skill-progress-card h6 {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1rem; /* Larger font size */
+    line-height: 1.3; /* Better line height */
+    margin-bottom: 0.5rem; /* More space */
+}
+
+.skill-progress-card.bg-light h6 {
+    color: #6c757d;
+}
+
+.skill-progress-card p {
+    font-size: 0.875rem; /* Larger description text */
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.skill-progress-card .btn {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem; /* Larger buttons */
+    margin-top: 0.5rem; /* More space above buttons */
+}
+
+.skill-progress-card .d-flex {
+    align-items: flex-start; /* Better alignment */
+}
+
+.skill-progress-card .badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem; /* Larger badges */
+}
+
+.skill-progress-card small {
+    font-size: 0.8rem; /* Larger small text */
+    line-height: 1.4;
+}
+
+/* Category Headers */
+.progress-page .text-primary h5 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Skill Details Modal */
+.skill-details h4 {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+.skill-details .list-group-item {
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.skill-details .list-group-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+/* Charts Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.chart-container canvas {
+    max-height: 300px !important;
+    max-width: 100% !important;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.toast {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 10px;
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .hero-section,
+    .btn,
+    footer {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-top: 0;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
